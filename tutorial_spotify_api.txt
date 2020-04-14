@@ -1,0 +1,55 @@
+Sentiment analyzer of spotify songs:  OAuth 
+cd d/ D:\SaturdaysAI\project\SpotifyAPI
+
+Authorization flow:
+App Sends user to spotify accounts service -> log in -> send me a code to my app-> code exchanged for an access token -> use access token for API request
+*******************************************************
+LINKS TUTORIALS:
+
+Tutorial OAuth:   https://developer.spotify.com/documentation/general/guides/authorization-guide/
+Spotipy:  https://spotipy.readthedocs.io/en/2.9.0/#authorization-code-flow
+Examples spotipy github: https://github.com/plamere/spotipy/tree/master/examples
+Dashboard:   https://developer.spotify.com/dashboard/applications
+*******************************************************
+**CREATE NEW APP/DASHBOARD ON YOUR SPOTIFY'S ACCOUNT:
+
+Get this info from spotify's account:
+
+Client ID 5407cf57ace04e42835571bd876601cb
+Client Secret 3f4864a5b91b433aa2c0e60a41f05572 
+http://localhost:8888/callback
+
+Go to set device password-> you will find your username there: Your device username is: 1110620649
+
+*******************************************************
+**CLONE SPOTIFY'S GITHUB AND INSTALL PACKAGES THROUGH NODE.JS AND NPM:
+
+Install node.js
+Add to path (environment variables)
+npm install on auth-server (clone of spotify's github) (we need to install dependencies found on auth-server folder)
+once dependencies are installed, we can change 
+
+Introduce info from spotify's account into app.js file inside auth-server/authorization-code   (open with notepad)
+
+*******************************************************
+RUN APP.JS ON COMMAND PROMPT TO GET AUTHORIZATION TOKEN
+
+Run app.js on console (must be filled with authentication info).
+*******************************************************
+WE NOW HAVE OUR TOKEN. WE CAN USE THE API!
+*******************************************************
+WE CAN USE THE API THROUGH SPOTIPY:
+
+We need to open the notebook through Bash + username
+
+
+
+
+
+2) Go to authorization-code/public/index.html and modify your GET functions (ask whatever you want to get in here!) :
+	More specifically, use function getHashParams() 
+
+On terminal:
+export SPOTIPY_CLIENT_ID='5407cf57ace04e42835571bd876601cb'
+export SPOTIPY_CLIENT_SECRET='3f4864a5b91b433aa2c0e60a41f05572'
+export SPOTIPY_REDIRECT_URI='http://localhost:8888/callback'
